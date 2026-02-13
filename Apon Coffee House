@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>আপন হাউস | প্রিমিয়াম কফি ও ফাস্ট ফুড</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+/* ------------------ CSS START ------------------ */
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--primary-color:#8B4513;--secondary-color:#D2691E;--accent-color:#FFD700;--dark-bg:#1A120B;--light-bg:#FFF8F0;--text-dark:#2C1810;--text-light:#FFF5E6;--glass-bg:rgba(255,255,255,0.1);--shadow:0 4px 20px rgba(0,0,0,0.1);--transition:all 0.3s ease;}
+body{font-family:'Poppins',sans-serif;background:var(--light-bg);color:var(--text-dark);line-height:1.6;transition:var(--transition);}
+body.dark-mode{background:var(--dark-bg);color:var(--text-light);}
+body.dark-mode .navbar{background:rgba(26,18,11,0.95);}
+.container{max-width:1300px;margin:0 auto;padding:0 20px;}
+.navbar{position:fixed;top:0;left:0;right:0;background:rgba(255,248,240,0.95);backdrop-filter:blur(10px);box-shadow:var(--shadow);z-index:1000;transition:var(--transition);}
+.nav-content{display:flex;justify-content:space-between;align-items:center;height:80px;}
+.logo{display:flex;align-items:center;gap:12px;}
+.logo-img{width:50px;height:50px;border-radius:50%;object-fit:cover;}
+.logo-text{font-size:24px;font-weight:700;color:var(--primary-color);font-family:'Playfair Display',serif;}
+.nav-menu{display:flex;list-style:none;gap:30px;}
+.nav-menu a{text-decoration:none;color:inherit;font-weight:500;font-size:16px;transition:var(--transition);position:relative;}
+.nav-menu a::after{content:'';position:absolute;bottom:-5px;left:0;width:0;height:2px;background:var(--primary-color);transition:var(--transition);}
+.nav-menu a:hover::after,.nav-menu a.active::after{width:100%;}
+.nav-right{display:flex;align-items:center;gap:20px;}
+.theme-toggle{background:none;border:none;font-size:20px;cursor:pointer;color:var(--primary-color);transition:var(--transition);}
+.theme-toggle:hover{transform:scale(1.1);}
+.hamburger{display:none;flex-direction:column;gap:6px;background:none;border:none;cursor:pointer;}
+.hamburger span{width:30px;height:3px;background:var(--primary-color);transition:var(--transition);}
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;padding:100px 0 50px;overflow:hidden;}
+.hero-bg{position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,#8B4513 0%,#D2691E 50%,#FFD700 100%);opacity:0.1;z-index:-1;animation:gradientMove 10s ease infinite;}
+@keyframes gradientMove{0%,100%{transform:scale(1);}50%{transform:scale(1.05);}}
+.hero-content{max-width:800px;animation:fadeInUp 1s ease;}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+.estd{display:inline-block;padding:8px 20px;background:var(--primary-color);color:white;border-radius:30px;font-size:14px;letter-spacing:2px;margin-bottom:20px;}
+.hero-title{font-size:48px;line-height:1.2;margin-bottom:30px;font-family:'Playfair Display',serif;}
+.hero-title .line1{display:block;font-size:24px;color:var(--primary-color);font-weight:400;}
+.hero-title .line2{display:block;font-size:56px;font-weight:700;background:linear-gradient(45deg,var(--primary-color),var(--secondary-color));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.hero-title .line3{display:block;font-size:36px;font-weight:600;color:var(--accent-color);text-shadow:2px 2px 4px rgba(0,0,0,0.1);}
+.hero-features{display:flex;gap:30px;margin-bottom:40px;flex-wrap:wrap;}
+.hero-features span{display:flex;align-items:center;gap:10px;padding:10px 20px;background:var(--glass-bg);backdrop-filter:blur(5px);border-radius:50px;font-weight:500;}
+.hero-features i{color:var(--primary-color);}
+.hero-buttons{display:flex;gap:20px;}
+.btn-primary,.btn-secondary{padding:15px 40px;border-radius:50px;text-decoration:none;font-weight:600;transition:var(--transition);display:inline-flex;align-items:center;gap:10px;}
+.btn-primary{background:var(--primary-color);color:white;}
+.btn-primary:hover{background:var(--secondary-color);transform:translateY(-3px);box-shadow:0 10px 30px rgba(139,69,19,0.3);}
+.btn-secondary{background:transparent;border:2px solid var(--primary-color);color:var(--primary-color);}
+.btn-secondary:hover{background:var(--primary-color);color:white;transform:translateY(-3px);}
+.menu-section{padding:100px 0;border-bottom:1px solid rgba(0,0,0,0.1);}
+.section-header{text-align:center;margin-bottom:50px;}
+.badge{display:inline-block;padding:8px 20px;background:linear-gradient(45deg,var(--primary-color),var(--secondary-color));color:white;border-radius:30px;font-size:14px;margin-bottom:15px;}
+.section-header h2{font-size:36px;font-family:'Playfair Display',serif;margin-bottom:10px;}
+.gradient-text{background:linear-gradient(45deg,var(--primary-color),var(--accent-color));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(350px,1fr));gap:25px;}
+.menu-item{background:rgba(255,255,255,0.1);backdrop-filter:blur(5px);border:1px solid rgba(255,255,255,0.2);border-radius:20px;overflow:hidden;transition:var(--transition);padding:20px;display:flex;align-items:center;gap:20px;}
+body.dark-mode .menu-item{background:rgba(0,0,0,0.2);border-color:rgba(255,255,255,0.1);}
+.menu-item:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(0,0,0,0.2);}
+.menu-item-image{width:80px;height:80px;background:linear-gradient(45deg,var(--primary-color),var(--secondary-color));border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.menu-item-image i{font-size:40px;color:white;}
+.menu-item-content{flex:1;}
+.menu-item h3{font-size:18px;font-weight:600;margin-bottom:5px;display:flex;justify-content:space-between;align-items:center;}
+.price{color:var(--primary-color);font-weight:700;font-size:16px;}
+.menu-item p{font-size:14px;opacity:0.8;}
+.pizza-item{flex-direction:column;align-items:flex-start;}
+.pizza-item h3{width:100%;}
+.pizza-item p{margin-top:10px;padding-top:10px;border-top:1px dashed rgba(0,0,0,0.1);}
+.footer{background:var(--primary-color);color:white;padding:80px 0 20px;}
+.footer-content{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;}
+.footer-info h3{font-size:24px;margin-bottom:10px;}
+.footer-info p{margin-bottom:8px;}
+.footer-social h4{margin-bottom:10px;}
+.footer-social .social-links a{color:white;font-size:20px;margin-right:10px;transition:var(--transition);}
+.footer-social .social-links a:hover{transform:scale(1.2);}
+.footer-bottom{text-align:center;margin-top:30px;font-size:14px;}
+.passion-text{color:#FFD700;font-weight:600;margin-top:5px;}
+/* Responsive */
+@media(max-width:992px){.nav-menu{display:none;position:absolute;top:80px;right:20px;background:var(--light-bg);flex-direction:column;gap:20px;padding:20px;border-radius:10px;box-shadow:var(--shadow);}.nav-menu.active{display:flex;}.hamburger{display:flex;}}
+body.dark-mode .nav-menu{background:var(--dark-bg);}
+/* ------------------ CSS END ------------------ */
+</style>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar">
+<div class="container">
+<div class="nav-content">
+<div class="logo">
+<img src="logo.png" alt="Apon House Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/50x50?text=AH'">
+<span class="logo-text">Apon House</span>
+</div>
+<ul class="nav-menu" id="navMenu">
+<li><a href="#home">হোম</a></li>
+<li><a href="#coffee">কফি</a></li>
+<li><a href="#fastfood">ফাস্ট ফুড</a></li>
+<li><a href="#indian">ইন্ডিয়ান ফুড</a></li>
+<li><a href="#pizza">পিৎজা</a></li>
+<li><a href="#pasta">পাস্তা</a></li>
+<li><a href="#juice">জুস বার</a></li>
+</ul>
+<div class="nav-right">
+<button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+<button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+</div>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="hero" id="home">
+<div class="hero-bg"></div>
+<div class="container">
+<div class="hero-content">
+<span class="estd">ESTD 2005</span>
+<h1 class="hero-title"><span class="line1">To make</span><span class="line2">EVERY moment of life BEAUTIFUL</span><span class="line3">COFFEE is the best</span></h1>
+<div class="hero-features"><span><i class="fas fa-coffee"></i> প্রিমিয়াম কফি বিনস</span><span><i class="fas fa-hamburger"></i> ফাস্ট ফুড</span><span><i class="fas fa-utensils"></i> ইন্ডিয়ান ফুড</span></div>
+<div class="hero-buttons"><a href="#coffee" class="btn-primary"><i class="fas fa-coffee"></i> মেনু দেখুন</a><a href="#contact" class="btn-secondary"><i class="fas fa-phone"></i> যোগাযোগ</a></div>
+</div>
+</div>
+</section>
+<!-- Menu Sections -->
+<!-- (Rest of menu sections same as before, omitted for brevity, keep your HTML content here) -->
+<!-- Footer -->
+<footer class="footer">
+<div class="container">
+<div class="footer-content">
+<div class="footer-info">
+<h3>Apon House</h3>
+<p><i class="fas fa-phone"></i> +880 XXXX-XXXXXX</p>
+<p><i class="fas fa-map-marker-alt"></i> Address Here</p>
+<p><i class="fas fa-clock"></i> Daily: 10:00 AM - 10:00 PM</p>
+</div>
+<div class="footer-social">
+<h4>Follow Us</h4>
+<div class="social-links">
+<a href="#"><i class="fab fa-facebook"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-youtube"></i></a>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2026 Apon House. সমস্ত অধিকার সংরক্ষিত</p>
+<p class="passion-text">Passion you can taste ❤️</p>
+</div>
+</div>
+</footer>
+<script>
+/* ------------------ JS START ------------------ */
+// Hamburger toggle
+const hamburger=document.getElementById('hamburger');
+const navMenu=document.getElementById('navMenu');
+hamburger.addEventListener('click',()=>{navMenu.classList.toggle('active');hamburger.classList.toggle('open');});
+// Theme toggle
+const themeToggle=document.getElementById('themeToggle');
+themeToggle.addEventListener('click',()=>{document.body.classList.toggle('dark-mode');themeToggle.querySelector('i').classList.toggle('fa-sun');themeToggle.querySelector('i').classList.toggle('fa-moon');});
+/* ------------------ JS END ------------------ */
+</script>
+</body>
+</html>
